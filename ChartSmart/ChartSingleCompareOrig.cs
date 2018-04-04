@@ -202,15 +202,16 @@ namespace ChartSmart
 
         private void RenderChartBackground(Graphics graphics)
         {
+            Chart chart;
             if (chartType == ChartTypeBar)
             {
-                BarChart barChart = new BarChart();
-                barChart.RenderBarChartBackground(chartSize, graphics);
+                chart = new BarChart();
+                chart.RenderBackground(chartSize, graphics);
             }
             else
             {
-                PieChart pieChart = new PieChart();
-                pieChart.RenderPieChartBackground(chartSize, graphics);
+                chart = new PieChart();
+                chart.RenderBackground(chartSize, graphics);
             }
 
         }

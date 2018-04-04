@@ -2,12 +2,12 @@
 
 namespace ChartSmart
 {
-    internal class BarChart
+    internal class BarChart : Chart
     {
-        public void RenderBarChartBackground(string s, Graphics graphics)
+        public override void RenderBackground(string chartSize, Graphics graphics)
         {
             SolidBrush brush;
-            if (s == ChartSingleCompareOrig.ChartSizeBig)
+            if (chartSize == ChartSingleCompareOrig.ChartSizeBig)
             {
                 brush = new SolidBrush(Color.Red);
 

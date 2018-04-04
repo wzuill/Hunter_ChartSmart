@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BarChart.cs" />
+    <Compile Include="Chart.cs" />
     <Compile Include="ChartData.cs" />
     <Compile Include="ChartSingleCompareOrig.cs">
       <SubType>Form</SubType>
