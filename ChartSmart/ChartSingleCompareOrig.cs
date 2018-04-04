@@ -60,11 +60,11 @@ namespace ChartSmart
 
             if (chartType == ChartTypeBar)
             {
-                chartData = GetBarChartData(chartSize);
+                chartData = chart.GetData(chartSize);
             }
             else
             {
-                chartData = GetPieChartData(chartSize);
+                chartData = chart.GetData(chartSize);
             }
 
             DisplayData(graphics, chartData);
@@ -164,36 +164,6 @@ namespace ChartSmart
                         SolidBrush(Color.White),
                     new PointF(60, 170));
             }
-        }
-
-        private static ChartData GetPieChartData(string s)
-        {
-            ChartData chartData;
-            chartData = new ChartData();
-            if (s == ChartSizeBig)
-            {
-                chartData.otherData = "Pie Data\nLarge";
-            }
-            else
-            {
-                chartData.someOtherDataObject = "Pie Data\nSmall";
-            }
-
-            return chartData;
-        }
-
-        private static ChartData GetBarChartData(string s)
-        {
-            ChartData chartData;
-            chartData = new ChartData();
-            if (s == ChartSizeBig)
-                chartData.data = "Bar Data\nLarge";
-            else
-            {
-                chartData.data = "Bar Data\nSmall";
-            }
-
-            return chartData;
         }
 
         private Chart ChartFactory()

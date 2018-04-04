@@ -20,5 +20,21 @@ namespace ChartSmart
 
             brush.Dispose();
         }
+
+        public override ChartData GetData(string s)
+        {
+            ChartData chartData;
+            chartData = new ChartData();
+            if (s == ChartSingleCompareOrig.ChartSizeBig)
+            {
+                chartData.otherData = "Pie Data\nLarge";
+            }
+            else
+            {
+                chartData.someOtherDataObject = "Pie Data\nSmall";
+            }
+
+            return chartData;
+        }
     }
 }
