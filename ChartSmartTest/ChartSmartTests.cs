@@ -15,14 +15,14 @@ namespace ChartSmartTest
         }
 
         [TestMethod]
-        [UseReporter(typeof(DiffReporter))]
+        [UseReporter(typeof(ClipboardReporter))]
         public void TestThatApprovalsIsWorking()
         {
             ApprovalTests.Approvals.Verify("Test");
         }
 
         [TestMethod]
-        [UseReporter(typeof(TortoiseImageDiffReporter), typeof(ClipboardReporter))]
+        [UseReporter(typeof(ClipboardReporter))]
         public void TestMainForm()
         {
             frmMain main = new frmMain();
@@ -31,7 +31,7 @@ namespace ChartSmartTest
         }
 
         [TestMethod]
-        [UseReporter(typeof(TortoiseImageDiffReporter), typeof(ClipboardReporter))]
+        [UseReporter(typeof(ClipboardReporter))]
         public void TestBarChartSingle()
         {
             frmMain main = new frmMain();
@@ -41,7 +41,7 @@ namespace ChartSmartTest
         }
 
         [TestMethod]
-        [UseReporter(typeof(TortoiseImageDiffReporter), typeof(ClipboardReporter))]
+        [UseReporter(typeof(ClipboardReporter))]
         public void TestBarChartCompare()
         {
             frmMain main = new frmMain();
@@ -52,7 +52,7 @@ namespace ChartSmartTest
 
 
         [TestMethod]
-        [UseReporter(typeof(DiffReporter))]
+        [UseReporter(typeof(ClipboardReporter))]
         public void TestPieChartWindow()
         {
             frmMain main = new frmMain();
@@ -62,7 +62,7 @@ namespace ChartSmartTest
         }
 
         [TestMethod]
-        [UseReporter(typeof(DiffReporter))]
+        [UseReporter(typeof(ClipboardReporter))]
         public void TestPieChartCompareWindow()
         {
             frmMain main = new frmMain();
