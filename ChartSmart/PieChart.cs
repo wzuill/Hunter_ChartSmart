@@ -4,10 +4,10 @@ namespace ChartSmart
 {
     internal class PieChart : Chart
     {
-        public override void RenderBackground(string chartSize, Graphics graphics)
+        public override void RenderBackground(string s, Graphics graphics)
         {
             SolidBrush brush;
-            if (chartSize != ChartSingleCompareOrig.ChartSizeBig)
+            if (s != ChartSingleCompareOrig.ChartSizeBig)
             {
                 brush = new SolidBrush(Color.Blue);
                 graphics.FillEllipse(brush, 20, 30, 160, 160);

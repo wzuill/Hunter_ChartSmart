@@ -53,8 +53,20 @@ namespace ChartSmart
         private void DrawChart()
         {
             var graphics = InitializeGraphics();
-            RenderChartBackground(graphics);
-            var chartData = GetChartData();
+            var chart = ChartFactory();
+            chart.RenderBackground(chartSize, graphics);
+
+            ChartData chartData;
+
+            if (chartType == ChartTypeBar)
+            {
+                chartData = GetBarChartData(chartSize);
+            }
+            else
+            {
+                chartData = GetPieChartData(chartSize);
+            }
+
             DisplayData(graphics, chartData);
             InvalidateIfNeeded(graphics, chartData);
         }
@@ -154,27 +166,11 @@ namespace ChartSmart
             }
         }
 
-        private ChartData GetChartData()
-        {
-            ChartData chartData;
-
-            if (chartType == ChartTypeBar)
-            {
-                chartData = GetBarChartData();
-            }
-            else
-            {
-                chartData = GetPieChartData();
-            }
-
-            return chartData;
-        }
-
-        private ChartData GetPieChartData()
+        private static ChartData GetPieChartData(string s)
         {
             ChartData chartData;
             chartData = new ChartData();
-            if (chartSize == ChartSizeBig)
+            if (s == ChartSizeBig)
             {
                 chartData.otherData = "Pie Data\nLarge";
             }
@@ -186,11 +182,11 @@ namespace ChartSmart
             return chartData;
         }
 
-        private ChartData GetBarChartData()
+        private static ChartData GetBarChartData(string s)
         {
             ChartData chartData;
             chartData = new ChartData();
-            if (chartSize == ChartSizeBig)
+            if (s == ChartSizeBig)
                 chartData.data = "Bar Data\nLarge";
             else
             {
@@ -200,20 +196,19 @@ namespace ChartSmart
             return chartData;
         }
 
-        private void RenderChartBackground(Graphics graphics)
+        private Chart ChartFactory()
         {
             Chart chart;
             if (chartType == ChartTypeBar)
             {
                 chart = new BarChart();
-                chart.RenderBackground(chartSize, graphics);
             }
             else
             {
                 chart = new PieChart();
-                chart.RenderBackground(chartSize, graphics);
             }
 
+            return chart;
         }
 
         private Bitmap drawArea;
