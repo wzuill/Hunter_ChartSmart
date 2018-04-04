@@ -8,7 +8,7 @@ namespace ChartSmart
     public partial class ChartSingleCompareOrig : Form
     {
         private const int ChartTypeBar = 406;
-        private const string ChartSizeBig = "rpfll";
+        public const string ChartSizeBig = "rpfll";
         private const string ChartSizeCompare = "splitdisplay";
         private string chartSize;
         private int chartType;
@@ -204,50 +204,15 @@ namespace ChartSmart
         {
             if (chartType == ChartTypeBar)
             {
-                RenderBarChartBackground(graphics);
+                BarChart barChart = new BarChart();
+                barChart.RenderBarChartBackground(chartSize, graphics);
             }
             else
             {
-                RenderPieChartBackground(graphics);
+                PieChart pieChart = new PieChart();
+                pieChart.RenderPieChartBackground(chartSize, graphics);
             }
 
-        }
-
-        private void RenderPieChartBackground(Graphics graphics)
-        {
-            SolidBrush brush;
-            if (chartSize != ChartSizeBig)
-            {
-                brush = new SolidBrush(Color.Blue);
-                graphics.FillEllipse(brush, 20, 30, 160, 160);
-            }
-            else
-            {
-                brush = new SolidBrush(Color.Blue);
-                graphics.FillEllipse(brush, 20, 30, 320, 320);
-            }
-
-            brush.Dispose();
-        }
-
-        private void RenderBarChartBackground(Graphics graphics)
-        {
-            SolidBrush brush;
-            if (chartSize == ChartSizeBig)
-            {
-                brush = new SolidBrush(Color.Red);
-
-                graphics.FillRectangle(brush, 20, 30, 300, 300);
-            }
-            else
-            {
-                brush = new SolidBrush(Color.Red);
-
-
-                graphics.FillRectangle(brush, 20, 30, 150, 150);
-            }
-
-            brush.Dispose();
         }
 
         private Bitmap drawArea;
