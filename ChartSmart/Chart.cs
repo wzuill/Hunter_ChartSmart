@@ -6,5 +6,6 @@ namespace ChartSmart
     {
         public abstract void RenderBackground(string chartSize, Graphics graphics);
         public abstract ChartData GetData(string chartSize);
+        public abstract void DisplayChart(string chartSize, Graphics graphics, ChartData chartData);
     }
 }

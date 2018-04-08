@@ -54,6 +54,7 @@
     <Compile Include="ChartSingleCompareOrig.Designer.cs">
       <DependentUpon>ChartSingleCompareOrig.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChartSizes.cs" />
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
